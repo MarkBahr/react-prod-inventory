@@ -118,3 +118,39 @@
     @apply bg-background text-foreground;
   }
 }
+
+.create {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.check {
+  margin-top: 10px;
+}
+
+label {
+  padding: 5px;
+  font-size: 12px;
+}
+
+.search {
+}
+
+.btn {
+  background-color: rgb(230, 120, 120);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-size: 12px;
+}
+
+.edit-btn {
+  background-color: rgb(161, 156, 156);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-size: 12px;
+  color: black;
+}

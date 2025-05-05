@@ -8,8 +8,18 @@ import { TableBody } from "./ui/table";
 import { TableRow } from "./ui/table";
 import { TableCell } from "./ui/table";
 import { Button } from "./ui/button";
+import { Search } from "lucide-react";
 // import { TableCaption } from "./ui/table";
 
+interface Product {
+  id: string;
+  productName: string;
+  price: string;
+  category: string;
+  description: string;
+}
+
+interface MyProductProps {}
 // props in an object with items, which is an array of strings
 // A functional comopnent, we can use generics, React.FC is a type, says this is a functional component
 // WE plug in a value. explicitly set the type inside <{}>
@@ -21,13 +31,7 @@ const Products: React.FC<{ items: Product[] }> = (props) => {
     //   ))}
     // </ul>
     <div>
-      <search>
-        <form className="float-left" action="./search/">
-          <label>Find a Product</label>
-          <input type="search" id="product" name="q" />
-          <button type="submit">Search</button>
-        </form>
-      </search>
+      <Search>Search</Search>
       <Table>
         <TableHeader>
           <TableRow>
@@ -50,12 +54,8 @@ const Products: React.FC<{ items: Product[] }> = (props) => {
               <TableCell>{`$${item.price}`}</TableCell>
               <TableCell>{item.category}</TableCell>
               <TableCell>{item.description}</TableCell>
-              <TableCell>
-                <Button className="edit-btn">Edit</Button>
-              </TableCell>
-              <TableCell>
-                <Button className="btn">Delete</Button>
-              </TableCell>
+              <Button className="edit-btn">Edit</Button>
+              <Button className="btn">Delete</Button>
             </TableRow>
           ))}
         </TableBody>

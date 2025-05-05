@@ -1,30 +1,31 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import Procucts from "./components/Products";
 import "./App.css";
-import { Button } from "./components/ui/button";
+// import { Button } from "./components/ui/button";
 import Products from "./components/Products";
 import Product from "./models/product";
+import CreateProduct from "./components/AddProduct";
 
 function App() {
-  const products = [
-    new Product(
-      "Screw Driver",
-      10.99,
-      "Tools",
-      "Phillips, rubber handle for grip & shock protection"
-    ),
-    new Product(
-      "Multimeter",
-      54.99,
-      "Tools",
-      "Klein, electrician's choice, reads voltage, amps, ohms"
-    ),
-  ];
+  // THis state will manage an array of products
+  const [products, setProducts] = useState<Product[]>([]);
+
+  const addProductHandler = (
+    productName: string,
+    price: string,
+    category: string,
+    description: string
+  ) => {
+    const newProduct = new Product(productName, price, category, description);
+
+    setProducts((previousProducts) => {
+      return previousProducts.concat(newProduct);
+    });
+  };
+
   return (
     <div>
-      <Button>ShadCN Button</Button>
+      <h1 className="text-2xl font-bold">Electric Supply Inventory</h1>
+      <CreateProduct onCreateProduct={addProductHandler} />
       <Products items={products} />
     </div>
   );

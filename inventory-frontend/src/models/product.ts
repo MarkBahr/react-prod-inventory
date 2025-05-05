@@ -1,13 +1,13 @@
 class Product {
   id: string;
   productName: string;
-  price: number;
+  price: string;
   category: string;
   description: string;
 
   constructor(
     productName: string,
-    price: number,
+    price: string,
     category: string,
     description: string
   ) {
